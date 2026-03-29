@@ -1,21 +1,23 @@
-
 package com.example.customer.controller;
-import com.example.customer.model.Customer;
-import com.example.customer.service.CustomerService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
-import java.util.List;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
 @RestController
-@RequestMapping("/api/customers")
 public class CustomerController {
-    @Autowired
-    private CustomerService service;
+
     @GetMapping("/ping")
     public String ping() {
-        return "hey Chandu, make sure you learn it right";
+        return "this is chandu and here i'm exploring devops";
     }
-    @GetMapping
-    public List<Customer> getAllCustomers() {
-        return service.getAll();
+
+    @GetMapping("/version")
+    public String version() {
+        return "here is no version";
+    }
+
+    @GetMapping("/location")
+    public String location() {
+        return "i live in vijayawada";
     }
 }
